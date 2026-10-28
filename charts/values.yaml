@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image:
+  repository: "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/django-app"
+  tag: "latest"
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
+  targetPort: 8000
+
+config:
+  DEBUG: "False"
+  ALLOWED_HOSTS: "*"
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70 
