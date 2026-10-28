@@ -1,3 +1,5 @@
+# Вхідні параметри модуля: ім'я кластера, версія Kubernetes, ID VPC, приватні підмережі, типи EC2-інстансів та інші налаштування.
+
 variable "region" {
   description = "AWS region for deployment"
   default     = "us-east-1"

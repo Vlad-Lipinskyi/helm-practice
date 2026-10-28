@@ -1,3 +1,5 @@
+# Описує вхідні параметри модуля: наприклад, назву S3 bucket, регіон AWS або назву DynamoDB-таблиці.
+
 variable "bucket_name" {
   description = "Globally unique bucket name for Terraform state."
   type        = string

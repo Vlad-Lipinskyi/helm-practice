@@ -1,3 +1,5 @@
+# Вихідні значення, які можна використовувати в інших модулях або для підключення до кластера: наприклад, назва кластера, його endpoint або ARN.
+
 output "eks_cluster_endpoint" {
   description = "EKS API endpoint for connecting to the cluster"
   value       = aws_eks_cluster.eks.endpoint

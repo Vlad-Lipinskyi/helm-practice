@@ -1,3 +1,5 @@
+Містить вхідні параметри: наприклад, CIDR-діапазон VPC, діапазони підмереж, регіон або кількість зон доступності.
+
 variable "vpc_name" { type = string }
 variable "vpc_cidr_block" { type = string }
 variable "public_subnets" { type = list(string) }
