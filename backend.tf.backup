@@ -1,0 +1,2 @@
+# Local Kubernetes configuration is defined
+# in the root main.tf provider "helm".

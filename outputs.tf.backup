@@ -1,0 +1,57 @@
+
+# -------------------------------
+# S3 OUTPUTS
+# -------------------------------
+
+output "s3_bucket_name" {
+  description = "S3 bucket name"
+  value       = module.s3_backend.s3_bucket_name
+}
+
+output "dynamodb_table_name" {
+  description = "DynamoDB lock table name"
+  value       = module.s3_backend.dynamodb_table_name
+}
+
+# -------------------------------
+# VPC OUTPUTS
+# -------------------------------
+
+output "vpc_id" {
+  description = "VPC ID"
+  value       = module.vpc.vpc_id
+}
+
+output "public_subnets" {
+  description = "Public subnet IDs"
+  value       = module.vpc.public_subnets
+}
+
+output "private_subnets" {
+  description = "Private subnet IDs"
+  value       = module.vpc.private_subnets
+}
+
+output "internet_gateway_id" {
+  description = "Internet Gateway ID"
+  value       = module.vpc.internet_gateway_id
+}
+
+# -------------------------------
+# EKS OUTPUTS
+# -------------------------------
+
+output "eks_cluster_endpoint" {
+  description = "EKS cluster endpoint"
+  value       = module.eks.eks_cluster_endpoint
+}
+
+output "eks_cluster_name" {
+  description = "EKS cluster name"
+  value       = module.eks.eks_cluster_name
+}
+
+output "eks_node_role_arn" {
+  description = "EKS worker node role ARN"
+  value       = module.eks.eks_node_role_arn
+}
