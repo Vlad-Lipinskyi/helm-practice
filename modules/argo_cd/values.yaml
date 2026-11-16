@@ -1,7 +1,7 @@
 server:
-
   service:
+    type: NodePort
 
-    type: LoadBalancer
-
-    port: 443
+configs:
+  params:
+    server.insecure: true

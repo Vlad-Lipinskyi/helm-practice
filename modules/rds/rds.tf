@@ -2,35 +2,35 @@
 
 resource "aws_db_instance" "standard" {
 
-  count                   = var.use_aurora ? 0 : 1
+  count = var.use_aurora ? 0 : 1
 
-  identifier              = var.name
+  identifier = var.name
 
-  engine                  = var.engine
+  engine = var.engine
 
-  engine_version          = var.engine_version
+  engine_version = var.engine_version
 
-  instance_class          = var.instance_class
+  instance_class = var.instance_class
 
-  allocated_storage       = var.allocated_storage
+  allocated_storage = var.allocated_storage
 
-  db_name                 = var.db_name
+  db_name = var.db_name
 
-  username                = var.username
+  username = var.username
 
-  password                = var.password
+  password = var.password
 
-  db_subnet_group_name    = aws_db_subnet_group.default.name
+  db_subnet_group_name = aws_db_subnet_group.default.name
 
-  vpc_security_group_ids  = [aws_security_group.rds.id]
+  vpc_security_group_ids = [aws_security_group.rds.id]
 
-  multi_az                = var.multi_az
+  multi_az = var.multi_az
 
-  publicly_accessible     = var.publicly_accessible
+  publicly_accessible = var.publicly_accessible
 
   backup_retention_period = var.backup_retention_period
 
-  parameter_group_name    = aws_db_parameter_group.standard[0].name
+  parameter_group_name = aws_db_parameter_group.standard[0].name
 
 
   tags = var.tags
@@ -42,11 +42,11 @@ resource "aws_db_instance" "standard" {
 
 resource "aws_db_parameter_group" "standard" {
 
-  count       = var.use_aurora ? 0 : 1
+  count = var.use_aurora ? 0 : 1
 
-  name        = "${var.name}-rds-params"
+  name = "${var.name}-rds-params"
 
-  family      = var.parameter_group_family_rds
+  family = var.parameter_group_family_rds
 
   description = "Standard RDS PG for ${var.name}"
 
@@ -57,9 +57,9 @@ resource "aws_db_parameter_group" "standard" {
 
     content {
 
-      name         = parameter.key
+      name = parameter.key
 
-      value        = parameter.value
+      value = parameter.value
 
       apply_method = "pending-reboot"
 

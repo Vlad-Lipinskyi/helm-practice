@@ -2,22 +2,22 @@ variable "name" {
 
   description = "Назва інстансу або кластера"
 
-  type        = string
+  type = string
 
 }
 
 
 variable "engine" {
 
-  type        = string
+  type = string
 
-  default     = "postgres"
+  default = "postgres"
 
 }
 
 variable "engine_cluster" {
 
-  type    = string
+  type = string
 
   default = "aurora-postgresql"
 
@@ -25,7 +25,7 @@ variable "engine_cluster" {
 
 variable "aurora_replica_count" {
 
-  type    = number
+  type = number
 
   default = 1
 
@@ -34,7 +34,7 @@ variable "aurora_replica_count" {
 
 variable "aurora_instance_count" {
 
-  type    = number
+  type = number
 
   default = 2 # 1 primary + 1 replica
 
@@ -42,26 +42,26 @@ variable "aurora_instance_count" {
 
 variable "engine_version" {
 
-  type        = string
+  type = string
 
-  default     = "14.7"
+  default = "14.7"
 
 }
 
 variable "instance_class" {
 
-  type        = string
+  type = string
 
-  default     = "db.t3.micro"
+  default = "db.t3.micro"
 
 }
 
 
 variable "allocated_storage" {
 
-  type        = number
+  type = number
 
-  default     = 20
+  default = 20
 
 }
 
@@ -82,7 +82,7 @@ variable "username" {
 
 variable "password" {
 
-  type      = string
+  type = string
 
   sensitive = true
 
@@ -111,7 +111,7 @@ variable "subnet_public_ids" {
 
 variable "publicly_accessible" {
 
-  type    = bool
+  type = bool
 
   default = false
 
@@ -120,7 +120,7 @@ variable "publicly_accessible" {
 
 variable "multi_az" {
 
-  type    = bool
+  type = bool
 
   default = false
 
@@ -129,7 +129,7 @@ variable "multi_az" {
 
 variable "parameters" {
 
-  type    = map(string)
+  type = map(string)
 
   default = {}
 
@@ -138,7 +138,7 @@ variable "parameters" {
 
 variable "use_aurora" {
 
-  type    = bool
+  type = bool
 
   default = false
 
@@ -146,7 +146,7 @@ variable "use_aurora" {
 
 variable "backup_retention_period" {
 
-  type    = string
+  type = string
 
   default = ""
 
@@ -155,7 +155,7 @@ variable "backup_retention_period" {
 
 variable "tags" {
 
-  type    = map(string)
+  type = map(string)
 
   default = {}
 
@@ -164,7 +164,7 @@ variable "tags" {
 
 variable "parameter_group_family_aurora" {
 
-  type    = string
+  type = string
 
   default = "aurora-postgresql15"
 
@@ -172,7 +172,7 @@ variable "parameter_group_family_aurora" {
 
 variable "engine_version_cluster" {
 
-  type    = string
+  type = string
 
   default = "15.3"
 
@@ -180,7 +180,7 @@ variable "engine_version_cluster" {
 
 variable "parameter_group_family_rds" {
 
-  type    = string
+  type = string
 
   default = "postgres15"
 

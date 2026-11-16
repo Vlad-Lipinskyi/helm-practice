@@ -2,11 +2,11 @@
 
 resource "aws_db_subnet_group" "default" {
 
-  name       = "${var.name}-subnet-group"
+  name = "${var.name}-subnet-group"
 
   subnet_ids = var.publicly_accessible ? var.subnet_public_ids : var.subnet_private_ids
 
-  tags       = var.tags
+  tags = var.tags
 
 }
 
@@ -15,20 +15,20 @@ resource "aws_db_subnet_group" "default" {
 
 resource "aws_security_group" "rds" {
 
-  name        = "${var.name}-sg"
+  name = "${var.name}-sg"
 
   description = "Security group for RDS"
 
-  vpc_id      = var.vpc_id
+  vpc_id = var.vpc_id
 
 
   ingress {
 
-    from_port   = 5432
+    from_port = 5432
 
-    to_port     = 5432
+    to_port = 5432
 
-    protocol    = "tcp"
+    protocol = "tcp"
 
     cidr_blocks = ["0.0.0.0/0"] # або змінна
 
@@ -37,11 +37,11 @@ resource "aws_security_group" "rds" {
 
   egress {
 
-    from_port   = 0
+    from_port = 0
 
-    to_port     = 0
+    to_port = 0
 
-    protocol    = "-1"
+    protocol = "-1"
 
     cidr_blocks = ["0.0.0.0/0"]
 
